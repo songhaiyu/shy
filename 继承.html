@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //////// 1原型继承
+    //优点：通过原型继承多个引用类型的属性和方法
+    //缺点：一个原型变成了另一个的实例，这个实例中的属性是引用值
+    //那么这个值改变，就会全部污染
+    // 实现方式：
+    // function Super() { this.a = 1 }
+    // Super.prototype.say = function () { console.log('shy') }
+    // function Sub() { }
+    // Sub.prototype = new Super();
+    // let test = new Sub();
+    // console.log(test.a);
+    // test.say();
+
+    // function Super() { this.a = [1, 3] }
+    // function Sub() { }
+    // Sub.prototype = new Super();
+    // let txt = new Sub();
+    // txt.a.push(2)
+    // console.log(txt);
+    // let txt1 = new Sub();
+    // console.log(txt1);
+
+    // function Super1() { this.a = [12, 3.4] }
+    // function Sub1() { }
+    // Sub1.prototype = new Super1();
+    // let text = new Sub1();
+    // text.a.push(56)
+    // console.log(text);
+    // let test1 = new Sub1();
+    // console.log(test1);
+
+    // function Super2() { this.a = [1, 23, 54, 46] }
+    // function Sub2() { }
+    // Sub2.prototype = new Super2();
+    // let text2 = new Sub2();
+    // text2.a.push(123)
+    // console.log(text2)
+    // let test3 = new Sub2();
+    // console.log(test3);
+
+</script>
+<script>
+    // 第二种盗用构造函数
+    //实现：构造函数模式+call
+    //优点：实例是引用值不会污染
+    //缺点： 构造函数中的方法在每个实例都创建一遍（除非声明提到全局）
+    //否则实例无法访问原型上面的方法
+
+    // let Super = function () { this.a = 1 }
+    // let Sub = function () {
+    //     Super.call(this);
+    //     this.b = 2
+    // }
+    // console.log(new Sub());
+
+    // let Super1 = function () { this.a = 10 }
+    // let Sub1 = function () {
+    //     Super1.call(this);
+    //     this.b = 20
+    // }
+    // console.log(new Sub1());
+
+    // let Super2 = function () { this.a = 30 }
+    // let Sub2 = function () {
+    //     Super2.call(this);
+    //     this.b = 40
+    // }
+    // console.log(new Sub2());
+</script>
+<script>
+    //第三种  组合继承
+    //实现：原型继承+盗用构造函数继承
+    //优点：集合了原型继承和盗用构造函数继承的优点
+    //缺点：存在效率问题，
+    // function Super() { this.a = [1, 2] }
+    // Super.prototype.say = function () { console.log('shy') }
+    // function Sub() {
+    //     Super.call(this)
+    //     this.b = 2
+    // }
+    // Sub.prototype = new Super()
+    // const test1 = new Sub()
+    // console.log(test1.say())
+    // test1.a.push(3)
+    // console.log(test1.a)
+    // const test2 = new Sub()
+    // console.log(test2.a)
+
+
+    // function Super1() { this.a = [1, 2] }
+    // Super1.prototype.say = function () { console.log('shy') }
+    // function Sub1() {
+    //     Super1.call(this)
+    //     this.b = 2
+    // }
+    // Sub1.prototype = new Super1()
+    // const test3 = new Sub1()
+    // console.log(test3.say())
+    // test3.a.push(3)
+    // console.log(test3.a)
+    // const test4 = new Sub1()
+    // console.log(test4.a)
+
+    // function Super2() { this.a = [1, 2] }
+    // Super2.prototype.say = function () { console.log('shy') }
+    // function Sub2() {
+    //     Super2.call(this)
+    //     this.b = 2
+    // }
+    // Sub2.prototype = new Super2()
+    // const test5 = new Sub2()
+    // console.log(test5.say())
+    // test5.a.push(3)
+    // console.log(test5.a)
+    // const test6 = new Sub2()
+    // console.log(test6.a)
+</script>
+<script>
+    //第四种原型式继承
+    //优点：对一个对象进行浅克隆创建另一个对象，同时继承该对象的原型属性
+    //缺点：无法判断实例的构造函数是父类还是子类
+    //es5之前
+    // const obj = { a: 1 }
+    // function createObj(o) {
+    //     function Fn() { }
+    //     Fn.prototype = o
+    //     return new Fn()
+    // }
+    // const test = createObj(obj)
+    // console.log(test);
+    // const obj1 = { a: 1 }
+    // function createObj1(o) {
+    //     function Fn1() { }
+    //     Fn1.prototype = o
+    //     return new Fn1()
+    // }
+    // const test1 = createObj1(obj1)
+    // console.log(test1);
+    // const obj2 = { a: 1 }
+    // function createObj2(o) {
+    //     function Fn2() { }
+    //     Fn2.prototype = o
+    //     return new Fn2()
+    // }
+    // const test2 = createObj2(obj2)
+    // console.log(test2);
+    // //es5以后
+    // const obj1 = { a: 1 }
+    // const test1 = Object.create(obj1)
+    // console.log(test1);
+    // const obj2 = { a: 1 }
+    // const test2 = Object.create(obj2)
+    // console.log(test2);
+    // const obj3 = { a: 1 }
+    // const test3 = Object.create(obj3)
+    // console.log(test3);
+
+</script>
+<script>
+    //第五种 寄生式继承
+    //实现：构造函数模式+工厂模式
+    //优点：根据一个对象克隆创建另一个对象，并增强对象
+    //缺点：同【盗用构造函数继承】方法在每个实例上都要创建一遍
+    // function createObj(o) {
+    // //objectCopy不是原生接口，是自定义方法，对入参对象进行复制
+    //     let clone = objectCopy(o)
+    //     clone.say = function () {
+    //         console.log('shy')
+    //     }
+    //     return clone
+    // }
+    // const obj = { a: 1 }
+    // const test = createObj(obj)
+
+    // function createObj(o) {
+    //     let clone = objectCopy(o)
+    //     clone.say = function () {
+    //         console.log('shy')
+    //     }
+    //     return clone
+    // }
+    // const obj = { a: 1 }
+    // const test = createObj(obj)
+
+    // function createObj(o) {
+    //     let clone = objectCopy(o)
+    //     clone.say = function () {
+    //         console.log('shy')
+    //     }
+    //     return clone
+    // }
+    // const obj = { a: 1 }
+    // const test = createObj(obj)
+
+</script>
+<script>
+    //寄生式组合继承
+    //实现：盗用构造函数继承+原型式继承
+    //优点：完美继承
+    //缺点：存在效率问题
+    // function Super() { this.a = [1, 2] }
+    // Super.prototype.say = function () { console.log('shy') }
+    // function Sub() {
+    //     Super.call(this)
+    //     this.b = 2
+    // }
+    // Sub.prototype = Object.create(Super.prototype)
+    // Sub.prototype.constructor = Sub
+    // const test = new Sub()
+
+
+    // function Super() { this.a = [1, 2] }
+    // Super.prototype.say = function () { console.log('shy') }
+    // function Sub() {
+    //     Super.call(this)
+    //     this.b = 2
+    // }
+    // Sub.prototype = Object.create(Super.prototype)
+    // Sub.prototype.constructor = Sub
+    // const test = new Sub()
+
+
+    // function Super() { this.a = [1, 2] }
+    // Super.prototype.say = function () { console.log('shy') }
+    // function Sub() {
+    //     Super.call(this)
+    //     this.b = 2
+    // }
+    // Sub.prototype = Object.create(Super.prototype)
+    // Sub.prototype.constructor = Sub
+    // const test = new Sub()
+</script>
+
+</html>
