@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            width: 400px;
+            margin: auto;
+        }
+
+        .item {
+            width: 100px;
+            height: 50px;
+            float: left;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+
+
+        <h2>
+            点击切换颜色
+        </h2>
+        <hr>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+<script>
+    let a
+    let b, c, d
+    let r = 1
+    let t = 2, y = 5, u = 8
+    {
+        let giro = '你'
+    }
+    let giro = "好"
+    let long = '恋爱超人'  //报错
+    {
+        let school = "学校"
+        function fn() {
+            console.log(school);
+        }
+    }
+</script>
+<script>
+    let divList = document.getElementsByClassName('item')
+    console.log(divList);
+    for (let i = 0; i < divList.length; i++) {
+        divList[i].onclick = function () {
+            divList[i].style.backgroundColor = 'pink'
+        }
+    }
+</script>
+
+</html>

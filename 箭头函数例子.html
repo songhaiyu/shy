@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ad"></div>
+</body>
+<script>
+    /**
+     * 先获取标签
+     * 添加事件
+     * 设置定时器
+     * 完成修改样式
+     * ***/
+    let div = document.getElementById('ad')
+    console.log(div);
+    div.addEventListener('click', function () {
+        setTimeout(() => {
+            this.style.background = 'pink'
+        }, 2000)
+    })
+</script>
+
+</html>

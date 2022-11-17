@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+<script>
+    let kuaizi = [1, 2]
+    let fenghuang = [3, 4, 5]
+    let arr = [...kuaizi, ...fenghuang]
+    console.log(arr);
+    let arr1 = kuaizi.concat(fenghuang)
+    console.log(arr1);
+    let a = [7, 8, 9, 0]
+    let b = [...a]
+    console.log(a);
+    let div = document.querySelectorAll('div')
+    let newdiv = [...div]
+    console.log(newdiv);
+    let obj = {
+        name: '张'
+    }
+    let obj1 = {
+        age: 2
+    }
+    let newobj = { ...obj, ...obj1 }
+    console.log(newobj);
+
+    
+    // let kuaizi = [1, 2]
+    // let fenghuang = [3, 4, 5]
+    // let arr = [...kuaizi, ...fenghuang]
+    // console.log(arr);
+    // let arr1 = kuaizi.concat(fenghuang)
+    // console.log(arr1);
+    // let a = [7, 8, 9, 0]
+    // let b = [...a]
+    // console.log(a);
+    // let div = document.querySelectorAll('div')
+    // let newdiv = [...div]
+    // console.log(newdiv);
+    // let obj = {
+    //     name: '张'
+    // }
+    // let obj1 = {
+    //     age: 2
+    // }
+    // let newobj = { ...obj, ...obj1 }
+    // console.log(newobj);
+
+
+    // let kuaizi = [1, 2]
+    // let fenghuang = [3, 4, 5]
+    // let arr = [...kuaizi, ...fenghuang]
+    // console.log(arr);
+    // let arr1 = kuaizi.concat(fenghuang)
+    // console.log(arr1);
+    // let a = [7, 8, 9, 0]
+    // let b = [...a]
+    // console.log(a);
+    // let div = document.querySelectorAll('div')
+    // let newdiv = [...div]
+    // console.log(newdiv);
+    // let obj = {
+    //     name: '张'
+    // }
+    // let obj1 = {
+    //     age: 2
+    // }
+    // let newobj = { ...obj, ...obj1 }
+    // console.log(newobj);
+</script>
+
+</html>
