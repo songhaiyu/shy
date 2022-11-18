@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * promise出现的原因
+     *  1.为了解决异步回调问题
+     *  2.为了解决信任问题（第三方回调函数是不是只执行一次，性能，和执行多次）
+     *  3.为了解决回调执行顺序的问题
+     *  4.为了解决捕捉错误能力（400,500）
+     * 
+     * 概念：
+     * promise是一个容器，里面存放着异步事件
+     * 语法：
+     * promise是一个对象，可以获取异步操作的消息
+     * 特点：
+     *      1.三种状态：pendding（进行中）,fulfilled(已成功)，rejected(以失败)
+     *      2.状态的变化只有两种
+     *          进行中到已成功（pedding——>fulfilled）
+     *          进行中到已失败 (pedding——>rejected)
+     *      3.状态一旦确定，便不再更改，状态凝固--->resolved,无论什么时候监听都是这个样子
+     *      4.promise的返回值无论是不是promise函数，最终都会被封装promise函数返回，用.then获取结果
+     *      5.链式调用
+     * promise的回调参数
+     *      1，resolve--->成功的回调
+     *      1，reject--->失败的回调
+     * 和事件循环的区别：
+     *      事件循环一旦错过，不会再被监听到
+     *      promise状态瑛姑，永远都可以被监听到
+     * ***/
+
+    const p=new Promise(function(resolve,reject){
+        setTimeout(function() {
+            // let data='我要休息'
+            // resolve(data)
+            let err='我没钱'
+            reject(err)
+        })
+    })
+    p.then(res=>{
+        console.log(res);
+    }).catch(err=>{
+        console.log(err);
+    })
+
+    // const p=new Promise(function(resolve,reject){
+    //     setTimeout(function() {
+    //         let data='我要休息'
+    //         resolve(data)
+    //         let err='我没钱'
+    //         reject(err)
+    //     })
+    // })
+    // p.then(res=>{
+    //     console.log(res);
+    // }).catch(err=>{
+    //     console.log(err);
+    // })
+
+    // const p=new Promise(function(resolve,reject){
+    //     setTimeout(function() {
+    //         let data='我要休息'
+    //         resolve(data)
+    //         let err='我没钱'
+    //         reject(err)
+    //     })
+    // })
+    // p.then(res=>{
+    //     console.log(res);
+    // }).catch(err=>{
+    //     console.log(err);
+    // })
+</script>
+</html>
