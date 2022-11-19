@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    let strnum = '15'
+    let num = Number(strnum)
+    console.log(num);
+    let parstr = '15.55'
+    let parnum = parseInt(parstr)
+    console.log(parnum);
+    let parflstr = '15.555'
+    let parflnum = parseFloat(parflstr)
+    console.log(parflnum);
+    console.log('字符串转数字');
+    console.log(Number('')); 0
+    console.log(Number('10')); 10
+    console.log(Number('10px')); NaN
+    console.log('布尔值转数字');
+    console.log(Number(true)); 1
+    console.log(Number(false)); 0
+    console.log(Number(undefined));
+    console.log(Number(null));
+    let a = Symbol('a')
+    console.log(Number(1n));
+    let arr = [10, 20, 19]
+    console.log(Number(arr));
+    console.log('字符串+++++++++++++++++++');
+    console.log(String(1));
+    console.log(String(NaN));
+    console.log(String(null));
+    console.log(String(undefined));
+    console.log(String(Symbol()));
+    console.log(String({}));
+    console.log('用+++++');
+    console.log(String(10 + '10'));
+    console.log(String(10 + [10]));
+    console.log(String(10 + new Date()));
+    var i = 1
+    console.log(i);
+    var b = i++
+    console.log(i);
+    console.log(b);
+    var e = 1
+    console.log(e);
+    var c = ++e
+    console.log(e);
+    console.log(c);
+</script>
+
+</html>
