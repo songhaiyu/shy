@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * 
+     * ***/
+    // 语法
+    let s = new Set();
+    let s1 = new Set([1, 2, 3, 4, 5, 6, 7, 2, 1, 4, 5]);
+    // 只能添加单个
+    s.add('清华')
+    s.add('南大')
+    console.log(s);
+    // 删除 根据内容来进行删除
+    s.delete('清华')
+    console.log(s);
+    // 检测是否存在值
+    console.log(s.has('南大'));
+    // 遍历循环
+    for (let key of s) {
+        console.log(key);
+    }
+    // 长度
+    console.log(s.size);
+    // 去重
+    let arr = [1, 1, 1, 123, 1, 3, 43, 24, 3, 2];
+    let result = new Set(arr)
+    console.log(result);
+
+    // set转换数组
+    // 扩展运算符
+    // 循环遍历
+    // Array.from()
+    let b = [...result]
+    console.log(b);
+    let c=Array.from(result)
+    console.log(c);
+    // 将多个值变成数组的方法
+    let d=Array.of([12,312,3,14,1,4,4,12,])
+    console.log(d);
+
+
+
+    // let s = new Set();
+    // 只能添加单个
+    // s.add('清华')
+    // s.add('南大')
+    // 删除 根据内容来进行删除
+    // s.delete('清华')
+    // 检测是否存在值
+    // console.log(s.has('南大'));
+    // 遍历循环
+    // for (let key of s) {
+    //     console.log(key);
+    // }
+    // 长度
+    // console.log(s.size);
+    // 去重
+    // let arr = [1, 1, 1, 123, 1, 3, 43, 24, 3, 2];
+    // let result = new Set(arr)
+    // set转换数组
+    // 扩展运算符
+    // 循环遍历
+    // Array.from()
+    // let b = [...result]
+    // console.log(b);
+    // let c=Array.from(result)
+    // console.log(c);
+    // 将多个值变成数组的方法
+    // let d=Array.of([12,312,3,14,1,4,4,12,])
+    // console.log(d);
+
+    
+    // let s = new Set();
+    // 只能添加单个
+    // s.add('清华')
+    // s.add('南大')
+    // 删除 根据内容来进行删除
+    // s.delete('清华')
+    // 检测是否存在值
+    // console.log(s.has('南大'));
+    // 遍历循环
+    // for (let key of s) {
+    //     console.log(key);
+    // }
+    // 长度
+    // console.log(s.size);
+    // 去重
+    // let arr = [1, 1, 1, 123, 1, 3, 43, 24, 3, 2];
+    // let result = new Set(arr)
+    // set转换数组
+    // 扩展运算符
+    // 循环遍历
+    // Array.from()
+    // let b = [...result]
+    // console.log(b);
+    // let c=Array.from(result)
+    // console.log(c);
+    // 将多个值变成数组的方法
+    // let d=Array.of([12,312,3,14,1,4,4,12,])
+    // console.log(d);
+</script>
+
+</html>

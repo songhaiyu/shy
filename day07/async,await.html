@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * 1.async 和 await
+     * 为了解决链式调用一直then下去，所以生成了他的语法糖，async，await
+     * 特点：
+     * 1.await不能单独使用，必须是在async定义的函数内部使用
+     * 2.获取错误信息，需要使用try{}catch{}来进行获取
+     * try内部写代码块，catch接受错误
+     * catch接受的是最后一个错误信息
+     * 
+     * ***/
+
+    // function timeout() {
+    //     return 'hello,小宋'
+    // }
+    // async function a() {
+    //     let res = await timeout();
+    //     console.log(res);
+    // }
+    // a()
+
+    // async function fn1() { return 10 }
+    // async function fn2(num) { return 10 + num }
+    // async function fn3(num) { return 10 + num }
+    // async function fn4(num) { return 10 + num }
+    // async function fn5(num) { return 10 + num }
+    // // async function fn6() {
+    // //     let res = await fn1()
+    // //     res = await fn2(res)
+    // //     res = await fn3(res)
+    // //     res = await fn4(res)
+    // //     res = await fn5(res)
+    // //     console.log(res);
+    // // }
+    // // fn6()
+    // async function fn6() {
+    //     try {
+    //         let res = await fn1()
+    //         res = await fn2(res)
+    //         res = await fn3(res)
+    //         res = await fn4(res)
+    //         res = await fn5(res)
+    //         console.log(res);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }
+    // fn6()
+
+
+
+    // async function fn1() { return 10 }
+    // async function fn2(num) { return 10 + num }
+    // async function fn3(num) { return 10 + num }
+    // async function fn4(num) { return 10 + num }
+    // async function fn5(num) { return 10 + num }
+    // async function fn6() {
+    //     try {
+    //         let res = await fn1()
+    //         res = await fn2(res)
+    //         res = await fn3(res)
+    //         res = await fn4(res)
+    //         res = await fn5(res)
+    //         console.log(res);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }
+    // fn6()
+
+    async function fn1() { return 10 }
+    async function fn2(num) { return 10 + num }
+    async function fn3(num) { return 10 + num }
+    async function fn4(num) { return 10 + num }
+    async function fn5(num) { return 10 + num }
+    async function fn6() {
+        try {
+            let res = await fn1()
+            res = await fn2(res)
+            res = await fn3(res)
+            res = await fn4(res)
+            res = await fn5(res)
+            console.log(res);
+        } catch (e) {
+            console.log(e+'接受错误信息');
+        }
+    }
+    fn6()
+</script>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * Map
+     * 概念：为了提供更多数值类型的键，拓宽了传统object只能使用字符串作为键的延伸
+     * 方法：
+     *      1：new Map()
+     *      2：判断长度：map.size(尺寸，长度)
+     *      3:添加元素：map.set()s
+     *      4:获取键值：map.get()
+     *      5:判断当前对象存不存在属性：map.has()
+     *      6:删除当前对象中的属性：map.deletet()
+     *      7:清空该方法的所有成员.map.clear()
+     * ***/
+    // const obj = {
+    //     name: '小宋',
+    //     age: 18
+    // }
+
+    // const map = new Map([
+    //     ['name', '张三'],
+    //     ['title', 'Author']
+
+    // ])
+    // console.log(map.size);
+    // map.has('name')
+    // map.get('name')
+    // map.has('title')
+    // map.get('title')
+
+    const map = new Map();
+    // set添加一个属性
+    map.set('name', '小宋')
+    console.log(map);
+
+    // set添加一个方法
+    map.set('change', function () {
+        console.log('set添加的一个方法');
+    })
+    // set添加一个数组
+    let key = {
+        school: 'SHOOL',
+    }
+    map.set(key, ['清华', '北大'])
+    console.log(map);
+    // 判断是否存在该属性
+    console.log(map);
+    console.log(map.has('change'));
+    console.log(map.has(key));
+    // 删除当前对象中的属性
+    map.delete('name')
+    // 获取一个map
+    console.log(map.get('change'));
+    console.log(map.get(key));
+    for (let key of map) {
+        console.log(key);
+    }
+    map.clear();
+    console.log(map);
+</script>
+
+</html>
