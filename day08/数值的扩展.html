@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * 数值的扩展
+     *      Number.EPSILON表示最小精度
+     *      Math.abs:取绝对值
+     *      Number.isFinite  检测一个数值是否为有限数，（小数和长度有限度）
+     *      Infinity 无穷大
+     *      Number.isNaN  判断一个数值是不是NaN
+     *      Number.isInteger  判断一个数是不是整数
+     *      Number.parsetInte  Number.parseFloat
+     *      Math.trunc  将数字的小数部分抹掉
+     *      Math.sign  判断一个数到底是整数 负数 零  返回值不是布尔值
+     *          正数返回1  负数返回-1 0还是0
+     *  ***/
+
+    // function equal(a, b) {
+    //     if (Math.abs(a - b) < Number.EPSILON) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // }
+
+    // //进制
+    // let a = 0b0101
+    // let b = 0011
+    // let c = 100
+    // let d = 0xff
+    // console.log(Number.isFinite(100));
+    // console.log(Number.isFinite(100 / 0));
+    // console.log(Number.isFinite(Infinity));
+
+
+    function equal(a, b) {
+        if (Math.abs(a - b) < Number.EPSILON) {
+            return true
+        } else {
+            return false
+        }
+    }
+    let a = 0b0101
+    let b = 0011
+    let c = 100
+    let d = 0xff
+    console.log(Number.isFinite(100));
+    console.log(Number.isFinite(100 / 0));
+    console.log(Number.isFinite(Infinity));
+</script>
+
+</html>

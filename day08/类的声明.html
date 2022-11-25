@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // es5写法 构造函数
+    // function Phone(brand, price) {
+    //     this.brand = brand;
+    //     this.price = price;
+    // }
+    // Phone.prototype.call = function () {
+    //     console.log('你好我是小宋');
+    // }
+    // Phone.prototype.bell = function () {
+    //     console.log('我是铃声');
+    // }
+    // Phone.prototype.info = function () {
+    //     return '(我手机的型号是' + this.brand + '我手机的铃声是' + this.price + ")";
+    // }
+    // let p = new Phone('oppo', '七里香');
+    // console.log(p.info());
+
+    // class Phons {
+    //     constructor(brand, price) {
+    //         this.brand = brand;
+    //         this.price = price;
+    //     }
+    //     bell() {
+    //         console.log('我是第六组');
+    //     }
+    //     info() {
+    //         return '(我手机的型号是' + this.brand + '我手机的铃声是' + this.price + ")";
+    //     }
+    // }
+    // let pp=new Phons("vivo",'微雨')
+    // console.log(pp.info());
+
+
+    // function Phone(brand, price) {
+    //     this.brand = brand;
+    //     this.price = price;
+    // }
+    // Phone.prototype.call = function () {
+    //     console.log('我是小宋');
+    // }
+    // Phone.prototype.bell = function () {
+    //     console.log('铃声');
+    // }
+    // Phone.prototype.info = function () {
+    //     return '(我手机的型号是' + this.brand + '我手机的铃声是' + this.price + ")";
+    // }
+    // let p = new Phone('oppo', '七里香');
+    // console.log(p.info());
+
+    // class Phons {
+    //     constructor(brand, price) {
+    //         this.brand = brand;
+    //         this.price = price;
+    //     }
+    //     bell() {
+    //         console.log('六组');
+    //     }
+    //     info() {
+    //         return '(我手机的型号是' + this.brand + '我手机的铃声是' + this.price + ")";
+    //     }
+    // }
+    // let pp=new Phons("vivo",'微雨')
+    // console.log(pp.info());
+
+    function Phone(brand, price) {
+        this.brand = brand;
+        this.price = price;
+    }
+    Phone.prototype.call = function () {
+        console.log('我是小宋');
+    }
+    Phone.prototype.bell = function () {
+        console.log('铃声');
+    }
+    Phone.prototype.info = function () {
+        return '(我手机的型号是' + this.brand + '我手机的铃声是' + this.price + ")";
+    }
+    let p = new Phone('oppo', '七里香');
+    console.log(p.info());
+
+    class Phons {
+        constructor(brand, price) {
+            this.brand = brand;
+            this.price = price;
+        }
+        bell() {
+            console.log('六组');
+        }
+        info() {
+            return '(我手机的型号是' + this.brand + '我手机的铃声是' + this.price + ")";
+        }
+    }
+    let pp = new Phons("vivo", '微雨')
+    console.log(pp.info());
+</script>
+
+</html>

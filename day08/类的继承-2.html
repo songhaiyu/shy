@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // class Phone {
+    //     constructor(brand, price) {
+    //         this.brand = brand
+    //         this.price = price;
+    //     }
+    //     call() {
+    //         console.log('打电话');
+    //     }
+    // }
+    // class SmartPhone extends Phone {
+    //     constructor(brand, price, color, size) {
+    //         super(brand, price); //phone.call(this,brand,price)
+    //         this.color = color;
+    //         this.size = size;
+    //     }
+    //     photo() {
+    //         console.log('拍照');
+    //     }
+    //     playGame() {
+    //         console.log('游戏');
+    //     }
+    //     call() {
+    //         console.log('视频电话');
+    //     }
+    // }
+    // const oppo = new SmartPhone('oppo', 999, '红色', '4.7')
+    // oppo.call()
+    // oppo.photo()
+    // oppo.playGame()
+    // console.log(oppo);
+
+    // class Phone {
+    //     constructor(brand, price) {
+    //         this.brand = brand
+    //         this.price = price;
+    //     }
+    //     call() {
+    //         console.log('打电话');
+    //     }
+    // }
+    // class SmartPhone extends Phone {
+    //     constructor(brand, price, color, size) {
+    //         super(brand, price); //phone.call(this,brand,price)
+    //         this.color = color;
+    //         this.size = size;
+    //     }
+    //     photo() {
+    //         console.log('拍照');
+    //     }
+    //     playGame() {
+    //         console.log('游戏');
+    //     }
+    //     call() {
+    //         console.log('视频电话');
+    //     }
+    // }
+    // const oppo = new SmartPhone('oppo', 999, '红色', '4.7')
+    // oppo.call()
+    // oppo.photo()
+    // oppo.playGame()
+    // console.log(oppo);
+
+    class Phone {
+        constructor(brand, price) {
+            this.brand = brand
+            this.price = price;
+        }
+        call() {
+            console.log('打电话');
+        }
+    }
+    class SmartPhone extends Phone {
+        constructor(brand, price, color, size) {
+            super(brand, price); //phone.call(this,brand,price)
+            this.color = color;
+            this.size = size;
+        }
+        photo() {
+            console.log('拍照');
+        }
+        playGame() {
+            console.log('游戏');
+        }
+        call() {
+            console.log('视频电话');
+        }
+    }
+    const oppo = new SmartPhone('oppo', 999, '红色', '4.7')
+    oppo.call()
+    oppo.photo()
+    oppo.playGame()
+    console.log(oppo);
+</script>
+
+</html>

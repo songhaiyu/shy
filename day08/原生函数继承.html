@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // function Phone(brand,price){
+    //     this.brand=brand
+    //     this.price = price;
+    // }
+    // Phone.prototype.call = function() {
+    //     console.log('打电话');
+    // }
+    // function SmartPhone(brand,price,color,size){
+    //     Phone.call(this, brand, price);
+    //     this.color = color;
+    //     this.size = size;
+    // }
+    // SmartPhone.prototype=new Phone
+    // SmartPhone.prototype.constructor=SmartPhone
+    // SmartPhone.prototype.photo=function() {
+    //     console.log('拍照');
+    // }
+    // SmartPhone.prototype.plagGame=function() {
+    //     console.log('打游戏');
+    // }
+    // // console.log(SmartPhone());
+    // let a=new SmartPhone(1,2,3,4);
+    // console.log(a);
+
+    // function Phone(brand,price){
+    //     this.brand=brand
+    //     this.price = price;
+    // }
+    // Phone.prototype.call = function() {
+    //     console.log('打电话');
+    // }
+    // function SmartPhone(brand,price,color,size){
+    //     Phone.call(this, brand, price);
+    //     this.color = color;
+    //     this.size = size;
+    // }
+    // SmartPhone.prototype=new Phone
+    // SmartPhone.prototype.constructor=SmartPhone
+    // SmartPhone.prototype.photo=function() {
+    //     console.log('拍照');
+    // }
+    // SmartPhone.prototype.plagGame=function() {
+    //     console.log('打游戏');
+    // }
+    // let a=new SmartPhone(1,2,3,4);
+    // console.log(a);
+    
+    function Phone(brand,price){
+        this.brand=brand
+        this.price = price;
+    }
+    Phone.prototype.call = function() {
+        console.log('打电话');
+    }
+    function SmartPhone(brand,price,color,size){
+        Phone.call(this, brand, price);
+        this.color = color;
+        this.size = size;
+    }
+    SmartPhone.prototype=new Phone
+    SmartPhone.prototype.constructor=SmartPhone
+    SmartPhone.prototype.photo=function() {
+        console.log('拍照');
+    }
+    SmartPhone.prototype.plagGame=function() {
+        console.log('打游戏');
+    }
+    let a=new SmartPhone(1,2,3,4);
+    console.log(a);
+</script>
+</html>
