@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300);
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: linear-gradient(90deg, #ffafbd, #ffc3a0);
+			background-repeat: no-repeat;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			font-size: 16px;
+			list-style: none;
+			font-family: "Yanone Kaffeesatz", sans-serif !important;
+		}
+
+		.wrapper {
+			padding: 30px 40px 20px;
+			box-sizing: border-box;
+			text-align: center;
+			width: 440px !important;
+			max-width: 100%;
+			margin: 0 auto;
+			border-radius: 15px;
+			display: flex;
+			flex-direction: column;
+			background: #f2f2f2;
+		}
+
+		.header {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 25px;
+		}
+
+		img {
+			width: 80px;
+			height: 80px;
+			margin-right: 10px;
+		}
+
+		.header img {
+			-o-object-fit: cover;
+			object-fit: cover;
+			max-width: 100%;
+			-webkit-user-drag: none;
+		}
+
+		.title {
+			transform: rotate(3deg);
+			font-size: 16px;
+			padding: 8px 16px 3px;
+			border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+			color: #fff;
+			background: #fe7345;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		h1 {
+			margin: 0;
+			padding: 0;
+			font-size: 18px;
+			margin-bottom: 18px;
+		}
+
+		.input {
+			width: 200px;
+			outline: none;
+			border: none;
+			border-bottom: 3px dashed #fe7345;
+			padding: 5px 0 3px;
+			font-size: 14px;
+			background: transparent;
+			margin-right: 15px;
+		}
+
+		.active .submit {
+			position: relative;
+			transform: rotate(4deg);
+			outline: none;
+			border: none;
+			border-radius: 6px;
+			transition: transform .25s cubic-bezier(.175, .885, .32, 1.275);
+		}
+
+		.active .submit:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			content: "";
+			width: 100%;
+			background-color: transparent;
+			cursor: pointer;
+			outline: none;
+			border: none;
+			height: 100%;
+			transform: scaleY(1.1);
+			border: 1px solid #494a4b;
+			border-radius: inherit;
+			transform-origin: top;
+			background-image: url(data:image/png;base64,R0lGODlhBAAEAIABAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NUY1OENCRDdDMDYxMUUyOTEzMEE1MEM5QzM0NDVBMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NUY1OENCRTdDMDYxMUUyOTEzMEE1MEM5QzM0NDVBMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk1RjU4Q0JCN0MwNjExRTI5MTMwQTUwQzlDMzQ0NUEzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk1RjU4Q0JDN0MwNjExRTI5MTMwQTUwQzlDMzQ0NUEzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAAAQABAAAAgYEEpdoeQUAOw==);
+			background-color: #fe7345;
+			transition: transform .25s cubic-bezier(.175, .885, .32, 1.275);
+		}
+
+		.active .submit span {
+			position: relative;
+			display: block;
+			font-size: 16.5px;
+			padding: 4px 12px;
+			border: 2px solid #494a4b;
+			/* outline: none;
+            border: none; */
+			background-color: transparent;
+			cursor: pointer;
+			border-radius: inherit;
+			background-color: #fff;
+		}
+
+		.active {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+
+		.activemin {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 100px;
+			display: none;
+		}
+
+		.activemin span {
+			padding: 0 4px;
+			border-radius: 4px;
+			transition: all 60ms ease-out;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+
+
+
+		ul {
+			/* display: none; */
+			width: 360px !important;
+			box-sizing: border-box;
+			margin-top: 40px;
+			perspective: 350px;
+			/* display: block; */
+			list-style-type: disc;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			/* padding-inline-start: 40px; */
+		}
+
+		ul li {
+			box-sizing: border-box;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			padding: 8px 10px 8px 4px;
+			border-radius: 5px;
+			cursor: pointer;
+			position: relative;
+			/* background-color: #fe7345; */
+			margin-bottom: 5px;
+			;
+		}
+
+		ul li a {
+			color: #000000;
+			/* float: right; */
+			outline: none;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			font-weight: bold;
+			position: absolute;
+			right: 4px;
+		}
+
+		ul li span {
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: block;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			padding-right: 7px;
+			padding: 0;
+			margin: 0;
+		}
+
+		ul li input {
+			padding: 5px;
+			border-radius: 2px;
+			border: 2px solid #494a4b;
+			margin-right: 8px;
+		}
+
+		.del {
+			text-decoration: line-through;
+		}
+
+		.footer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 30px;
+			gap: 10px;
+			/* -webkit-animation: zoom-132cabf7 .45s ease-in-out;
+            animation: zoom-132cabf7 .45s ease-in-out; */
+		}
+
+		.msg {
+			font-size: 17px;
+			padding-top: 5px;
+			color: rgba(73, 74, 75, .45);
+		}
+
+		.footer-img {
+			display: inline-block;
+			box-sizing: border-box;
+			width: 30px !important;
+			padding-top: 3px;
+			height: 26px;
+			position: relative;
+		}
+
+		.footer-img img {
+			width: 22px !important;
+			height: 26px !important;
+			position: absolute;
+			left: 5px;
+			top: 8px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<img src="./note.75134fb0.svg" alt="">
+			<div class="title">
+				To-Do List
+			</div>
+		</div>
+		<div class="con">
+			<h1>
+				~ Today I need to ~
+			</h1>
+			<div class="active">
+				<input class="input" type="text" placeholder="Add new todo...">
+				<button class="submit">
+					<span class="clicksubmit">Submit</span>
+				</button>
+			</div>
+		</div>
+
+		<ul class="taskList">
+			<!-- <li>
+					<input type="checkbox" name="" id="" value="" />
+					<span>学习</span>
+					<a href="javascript:void(0);">删除</a>
+				</li> -->
+		</ul>
+		<div class="activemin">
+			<span><span class="first"></span>item left</span>
+			<span style="background-color: #fe7345; color:#fff;">All</span>
+			<span style="display: none;">Acitve</span>
+			<span style="display: none;">Completed</span>
+			<span style="display: none;">Clear completed</span>
+		</div>
+		<div class="footer">
+			<span class="footer-img">
+				<img src="./1669454402133.jpg" alt="">
+			</span>
+			<span class="msg">Congrat, you have no more tasks to do</span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	//用户任务输入框
+	//获取输入框的input节点
+	var taskInput = document.querySelector(".active>input");
+	//获取ul的节点
+	var taskList = document.querySelector(".taskList");
+	var first = document.querySelector(".first");//数量
+	var all = document.querySelector(".activemin span:nth-of-type(2)"); //所有任务
+	var task = document.querySelector(".activemin span:nth-of-type(3)"); //已完成
+	var untask = document.querySelector(".activemin span:nth-of-type(4)"); //未完成
+	var clear = document.querySelector(".activemin span:nth-of-type(5)"); //未完成
+	//用来计算输入的任务
+	var nextId;
+	// 底部显示隐藏
+	var footer = document.querySelector('.footer')
+	var activemin = document.querySelector(".activemin")
+	//添加按钮
+	var clicksubmit = document.querySelector(".clicksubmit")
+	//添加任务
+	function addTask() {
+		// 先判空
+		if (taskInput.value == '') {
+			alert('内容不能为空')
+		} else {
+			//taskStr就是本地存储localStorage.taskList的值
+			// 1.从localStorage本地存储获取字符串数据key：taskList
+			var taskStr = localStorage.taskList;
+			// 2.如果有就转成数组，没有就说明是第一次获取，定义一个新的空数组
+			// JSON.parse:将数据转换为json对象
+			var taskArr = taskStr == undefined ? [] : JSON.parse(taskStr);
+			nextId = localStorage.nextId == undefined ? -1 : localStorage.nextId;
+			// 3.获取用户输入的任务并创建对象
+			var obj = {
+				"nextId": ++nextId,
+				"name": `${taskInput.value}`,
+				"status": false		//true:已完成 false:未完成
+			}
+			//4.向数组追加
+			taskArr.push(obj);
+			taskInput.value = ''
+			footer.style.display = "none"
+			activemin.style.display = "block"
+
+			//5.重新把数组更新到localstorage,同时更新nextId
+			//JSON.stringify:把对象转换成字符串
+			localStorage.taskList = JSON.stringify(taskArr);
+			localStorage.nextId = nextId;
+			//6.重新渲染页面
+			showTaskList();
+		}
+	}
+	//渲染页面
+	showTaskList();
+	function showTaskList() {
+		// 每次添加之后再次添加渲染页面要清空
+		taskList.innerHTML = "";
+		// 1.从localstorage中读出数据
+		var taskStr = localStorage.taskList;
+		var taskArr = taskStr == undefined ? [] : JSON.parse(taskStr);
+		//2.创建li节点
+		taskArr.forEach(function (obj) {
+			// createElement:创建节点
+			var li = document.createElement("li")
+			li.innerHTML = `
+				<input type="checkbox" name="" id="" value="" />
+				<span>${obj.name}</span>
+				<a href="javascript:void(0);">X</a>
+				`;
+			//3.向ul中追加li
+			// insertBefore：li插入到taskList子节点上面
+			taskList.insertBefore(li, taskList.firstChild)
+		})
+		//4.重新渲染
+		showTask();
+	}
+	//回车调用
+	taskInput.onkeydown = function (e) {
+		if (e.keyCode == 13) {
+			addTask();
+		}
+	}
+	// 点击调用
+	clicksubmit.onclick = function (e) {
+		addTask();
+	}
+	// 渲染数据
+	showTask();
+	function showTask(state) {
+		taskList.innerHTML = "";
+		//1.从本地存储取数据
+		var taskStr = localStorage.taskList;
+		var taskArr = taskStr == undefined ? [] : JSON.parse(taskStr);
+		var total = taskArr.length;//总任务数
+		//筛选出未完成的任务
+		var noTask = taskArr.filter(function (obj) {
+			return obj.status == false;
+		})
+		var noTaskNum = noTask.length;	//未完成的数量
+		first.innerHTML = `${total}`;	//更新任务数
+		if (total == 0) {
+			footer.style.display = "block";
+			activemin.style.display = "none";
+		} else {
+			footer.style.display = "none";
+			activemin.style.display = "block";
+		}
+		//2.遍历追加节点
+		taskArr.forEach(function (obj, index) {
+			var li = document.createElement("li");
+			//渲染符合状态的数据
+			if (obj.status == state) {
+				li.innerHTML = `<input type="checkbox" ${obj.status == true ? 'checked' : ''} value="${obj.nextId}" />
+							<span class=${obj.status == true ? 'del' : ''}>${obj.name}</span>
+							<a href="javascript:void(0);">X</a>`;
+				taskList.insertBefore(li, taskList.firstElementChild);
+			} else if (state == undefined) {
+				li.innerHTML = `<input type="checkbox" ${obj.status == true ? 'checked' : ''} value="${obj.nextId}" />
+							<span class=${obj.status == true ? 'del' : ''}>${obj.name}</span>
+							<a href="javascript:void(0);">X</a>`;
+				taskList.insertBefore(li, taskList.firstElementChild);
+			}
+		})
+	}
+	var flag;	//识别当前选的是哪一个任务
+	//点击所有任务
+	all.onclick = function () {
+		showTask();
+		flag = undefined;
+		all.style.backgroundColor = '#fe7345'
+		all.style.color = '#fff'
+		task.style.backgroundColor = ''
+		task.style.color = ''
+		untask.style.backgroundColor = ''
+		untask.style.color = ''
+	}
+	//点击已完成的任务
+	task.onclick = function () {
+		showTask(true);
+		flag = true;
+		task.style.backgroundColor = '#fe7345'
+		task.style.color = '#fff'
+		untask.style.backgroundColor = ''
+		untask.style.color = ''
+		all.style.backgroundColor = ''
+		all.style.color = ''
+	}
+	//点击未完成的任务
+	untask.onclick = function () {
+		showTask(false);
+		flag = false;
+		task.style.backgroundColor = ''
+		task.style.color = ''
+		untask.style.backgroundColor = '#fe7345'
+		untask.style.color = '#fff'
+		all.style.backgroundColor = ''
+		all.style.color = ''
+	}
+	// 点击清空选中删除
+	clear.onclick = function () {
+		taskList.innerHTML = "";
+		//1.从本地存储取数据
+		var taskStr = localStorage.taskList;
+		var taskArr = taskStr == undefined ? [] : JSON.parse(taskStr);
+		//筛选出未完成的任务
+		var noTask = taskArr.filter(function (obj) {
+			return obj.status == false;
+		})
+
+		if (noTask.length == taskArr.length) {
+			console.log(noTask.length, taskArr.length);
+			alert("没有选中")
+
+		} else {
+			var noTaskNum = noTask.length;	//未完成的数量
+			taskArr = noTask //过滤出来的重新赋值
+			localStorage.taskList = JSON.stringify(taskArr); //深拷贝
+			var taskStr = localStorage.taskList;
+			var total = noTaskNum;//总任务数
+			first.innerHTML = `${total}`;	//更新任务数
+			if (total == 0) {  //根据数量判断下面是显示隐藏
+				footer.style.display = "block";
+				activemin.style.display = "none";
+			}
+			//2.遍历追加节点
+			taskArr.forEach(function (obj, index) {
+				var li = document.createElement("li");
+				li.style.backgroundColor = '#fe7345'
+				//渲染符合状态的数据
+				if (obj.status == false) {
+					li.innerHTML = `<input type="checkbox" ${obj.status == true ? 'checked' : ''} value="${obj.nextId}" />
+							<span class=${obj.status == true ? 'del' : ''}>${obj.name}</span>
+							<a href="javascript:void(0);">X</a>`;
+					taskList.insertBefore(li, taskList.firstElementChild);
+				}
+			})
+			showTask(); //调用渲染
+			//调用all事件
+			flag = undefined;
+			all.style.backgroundColor = '#fe7345'
+			all.style.color = '#fff'
+			task.style.display = 'none'
+			untask.style.display = 'none'
+		}
+
+
+	}
+	//点击修改完成状态	利用事件委托完成
+	taskList.onclick = function (event) {
+		//1.从本地存储取数据
+		var taskStr = localStorage.taskList;
+		var taskArr = taskStr == undefined ? [] : JSON.parse(taskStr);
+		var target = event.target || event.srcElement;
+		//获取事件对象
+		if (target.nodeName == "INPUT") {
+			//获取复选框的状态
+			var status = target.checked;
+			// 如果复选框被选中则添加删除线
+			if (status) {
+				// nextElementSibling：获取弟弟元素节点	给弟弟节点增加一个del
+				target.nextElementSibling.className = "del"
+				task.style.display = "inline-block"
+				untask.style.display = "inline-block"
+				clear.style.display = "inline-block"
+				setTimeout(function () {
+					var lis = document.querySelectorAll('li')
+					var as = document.querySelectorAll('a')
+					for (var i = 0; i < lis.length; i++) {
+						console.log(target.parentElement);
+						target.parentElement.style.backgroundColor = '#fe7345'
+						// console.log(lis[i]);
+						lis[i].style.backgroundColor = '#fe7345'
+						lis[i].style.color = '#fff'
+						as[i].style.color = '#fff'
+
+					}
+				}, 500)
+
+			} else {
+				target.nextElementSibling.className = ""
+				if (target.parentNode.parentNode) {
+					task.style.display = "inline-block"
+					untask.style.display = "inline-block"
+					clear.style.display = "inline-block"
+				} else {
+					task.style.display = "none"
+					untask.style.display = "none"
+					clear.style.display = "none"
+				}
+
+			}
+			//修改点击的数据对应的状态
+			var nextId = target.value;
+
+			//根据indexId查询对应的obj
+			var obj = taskArr.find(function (obj) {
+				return obj.nextId == nextId;
+			})
+			//改变状态
+			obj.status = status;
+		} else if (target.nodeName == "A") {
+			//获取自定义属性值
+			var index = target.dataset.index;
+			taskArr.splice(index, 1);
+
+			if (taskArr.length == 0) {
+				footer.style.display = "block";
+				activemin.style.display = "none";
+				task.style.display = "none"
+				untask.style.display = "none"
+				clear.style.display = "none"
+			}
+			else {
+				task.style.display = "inline-block"
+				untask.style.display = "inline-block"
+				clear.style.display = "inline-block"
+			}
+		}
+		//更新本地存储
+		localStorage.taskList = JSON.stringify(taskArr);
+		//重新渲染,需要判断当前点击的是哪个查询选项
+		showTask(flag);
+	}
+
+</script>
+
+</html>
