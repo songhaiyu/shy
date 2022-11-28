@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js//vue.js">
+
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="add">点击添加事件</button>
+        <button @click="addadd($event)">原生</button>
+        <button @click="addaddadd(123)">传参</button>
+    </div>
+</body>
+<script>
+    //如果传参有原生和参数 默认（$event,参数）
+
+    // let vm = new Vue({
+    //     el: "#app",
+    //     data: {
+
+    //     },
+    //     methods: {
+    //         //不能使用箭头函数
+    //         add() {
+    //             alert("我是点击添加事件")
+    //         },
+    //         //event原生
+    //         addadd(event) {
+    //             console.log(event);
+    //         },
+    //         addaddadd(val) {
+    //             console.log(val + '传参');
+    //         }
+    //     }
+    // })
+    // let vm = new Vue({
+    //     el: "#app",
+    //     data: {
+    //     },
+    //     methods: {
+    //         add() {
+    //             alert("我是点击添加事件")
+    //         },
+    //         addadd(event) {
+    //             console.log(event);
+    //         },
+    //         addaddadd(val) {
+    //             console.log(val + '传参');
+    //         }
+    //     }
+    // })
+    let vm = new Vue({
+        el: "#app",
+        data: {
+        },
+        methods: {
+            add() {
+                alert("我是点击添加事件")
+            },
+            addadd(event) {
+                console.log(event);
+            },
+            addaddadd(val) {
+                console.log(val + '传参');
+            }
+        }
+    })
+
+</script>
+
+</html>

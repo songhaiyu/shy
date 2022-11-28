@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+//     Object.defineProperty方法可以用来增加和修改对象的属性，该方法有三个参数；
+// 1、属性所在的对象；
+// 2、属性的名字；
+// 3、一个描述符对象；
+// 描述符对象可以为数据属性，包括：
+// 1、value：包含这个属性的属性值，默认值为default；
+// 2、enumerable：控制属性是否可以枚举，默认值为false；
+// 3、writable：控制属性是否可以被修改，默认值为false；
+// 4、configurable：控制属性是否可以被删除，默认值为false；
+// 描述对象也可以为访问器属性，包括get函数和set函数：
+// getter：当有人读取对象的该属性时，getter会被调用，返回值就是该属性的属性值；
+// setter：当有人修改对象的该属性时，setter就会被调用，且会收到修改的具体的值
+// 定义：通过一个对象代理对另一个对象中属性的操作（读/写);
+
+
+// Vue中的数据代理
+// 1、vue中的数据代理：通过vm对象来代理data对象中属性的操作（读/写）；
+// 2、vue中数据代理的好处：更加方便的操作data中的数据；
+// 3、基本原理：通过Object.defineProperty方法将data对象中的属性添加到vm对象上，为配置到vm中的属性添加getter和setter，在getter和setter内部操作data中对应的属性
+</script>
+
+</html>

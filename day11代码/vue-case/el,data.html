@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue初始</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{name}}</p>
+    </div>
+</body>
+
+<script>
+    /**
+     * data与el的两种写法
+     *  1：el有两种写法：
+     *      1：new Vue的时候配置el属性
+     *      2：先创建Vue实例，随后通过vm.$mount()指定el的值
+     *  2：data有两种写法：
+     *      1：对象式
+     *      2：函数式
+     *      选择：目前都可以，学习到组件时，data必须使用函数式，否则会报错，
+     *      因为组件最后需要集合在一起，组件内部需要独立的环境来保护变量不被污染
+     *  3：一个重要的原则：
+     *      由Vue管理函数，一定不要写箭头函数，一旦写了箭头函数，this就不再是Vue的实例了
+     *  ***/
+
+
+    // 初始vue
+    // Vue.config.productionTip = false;
+    // new Vue(
+    //     {
+    //         el: "#app",
+    //         data: () => {
+    //             console.log(this);
+    //             return {
+    //                 name: "积云"
+    //             }
+    //         }
+    //     }
+    // )
+    // new Vue({
+    //     el: "#app",
+    //     data: {
+    //         name: '积云'
+    //     }
+    // })//  挂载
+
+    new Vue({
+        data: {
+            name: "小宋"
+        }
+    }).$mount('#app')
+
+    console.log(new Vue);
+</script>
+
+</html>

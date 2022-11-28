@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<!-- 1.Vue中的数据代理:
+通过vm对象来代理data对象中属性的操作 (读/写)2.Vue中数据代理的好处:
+更加方便的操作qata中的数据
+3.基本原理:
+通过object.defineProperty()把data对象中所有属性添加到vm上为每一个添加到vm上的属性，都指定一个getter/setter.
+在getter/setter内部去操作 (读/写) data中对应的属性 -->
+<!-- <script src="../js//vue.js"></script> -->
+<!-- 数据代理：通过一个对象代理对另一个对象中属性的操作(读/写) -->
+<script>
+    let person = {
+        name: "张三",
+        age: 22,
+        sex: "男"
+    }
+    let hp = '123'
+    // Object.defineProperty
+    // 用于 1.v-model
+    //      2.computed
+    //      3.watch
+    Object.defineProperty(person, 'hp', {
+        // value: '喝茶',
+        //枚举：可循环遍历出来的属性
+        // enumerable: true, //控制属性是否可以枚举，默认值false
+        // writable: true, //控制属性是否可以被修改，默认值false
+        // configurable: true, //控制属性是否可以被删除，默认值false
+        get: function () {
+            console.log('读取');
+            return hp
+        },
+        set: function (value) {
+            hp = value
+            console.log('设置');
+        }
+    })
+    // console.log(Object.keys(person));
+    // for (let key in person) {
+    //      console.log(key);
+    // }
+
+
+    // let person = {
+    //     name: "张三",
+    //     age: 22,
+    //     sex: "男"
+    // }
+    // let hp = '123'
+    // Object.defineProperty(person, 'hp', {
+    //     // value: '喝茶',
+    //     // enumerable: true,
+    //     // writable: true,
+    //     // configurable: true,
+    //     get: function () {
+    //         console.log('读取');
+    //         return hp
+    //     },
+    //     set: function (value) {
+    //         hp = value
+    //         console.log('设置');
+    //     }
+    // })
+    //  console.log(Object.keys(person));
+
+    // let person = {
+    //     name: "张三",
+    //     age: 22,
+    //     sex: "男"
+    // }
+    // let hp = '123'
+    // Object.defineProperty(person, 'hp', {
+    //     // value: '喝茶',
+    //     // enumerable: true,
+    //     // writable: true,
+    //     // configurable: true,
+    //     get: function () {
+    //         console.log('读取');
+    //         return hp
+    //     },
+    //     set: function (value) {
+    //         hp = value
+    //         console.log('设置');
+    //     }
+    // })
+    //  console.log(Object.keys(person));
+
+</script>
+
+</html>

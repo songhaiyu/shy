@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件修饰符</title>
+    <style>
+        * {
+            margin-top: 20px;
+        }
+
+        .demo1 {
+            height: 50px;
+            background-color: coral;
+        }
+
+        .box1 {
+            padding: 5px;
+            width: 100px;
+            background-color: skyblue;
+        }
+
+        .box2 {
+            padding: 5px;
+            width: 100px;
+            background-color: orange;
+        }
+    </style>
+    <script type="text/javascript" src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>欢迎学习{{name}}</h2>
+        <a href="https://blog.csdn.net/qq_37050372/category_11400210.html" @click="showInfo">点击提示</a>
+        <div @click="showInfo">
+            <button @click="showInfo1">点击提示</button>
+        </div>
+        <button @click.stop="showInfo2">点击提示</button>
+        <button @click.once="showInfo3">点击提示</button>
+        <div class="box1" @click="showMsg(1)">
+            div1
+            <div class="box2" @click="showMsg(2)">
+                div2
+            </div>
+
+        </div>
+
+        <div class="demo1" @click.self="showInfo4">
+            <button @click="showInfo4">点击提示</button>
+
+        </div>
+
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false //阻止Vue在启动时生成生产提示
+
+    // Vue中的事件修饰符
+    // 1.prevent:阻止默认事件 (常用)
+    // 2.stop:阻止事件冒泡 (常用) ;
+    // 3.once: 事件只触发一次 (常用) ;
+    // 4.capture: 使用事件的捕获模式;
+    // 5.self: 只有event.target是当前操作的元素时才触发事件;
+    // 6.passive: 事件的默认行为立即执行，无需等待事件回调执行完毕;
+
+
+
+
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: 'Vue专栏'
+        },
+        methods: {
+            showInfo(e) {
+                e.preventDefault();
+                alert('你好小宋')
+
+            },
+            showInfo1(e) {
+                e.stopPropagation();
+                alert('你好小张')
+
+            },
+            showInfo2(e) {
+                alert('你好小王')
+            },
+            showInfo3(e) {
+                alert('你好once')
+            },
+            showMsg(num) {
+                console.log(num)
+            },
+            showInfo4(e){
+                console.log(e.target)
+                alert('你好self')
+ 
+            },
+        },
+    })
+</script>
+
+</html>
