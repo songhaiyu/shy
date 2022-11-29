@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>姓：<input type="text" v-model="firstName"></div>
+        <div>名：<input type="text" v-model="lastName"></div>
+        <div>全名：<input type="text" v-model="fullName"></div>
+        <div>{{fullName}}</div>
+
+        <div>姓：<input type="text" v-model="firstName"></div>
+        <div>名：<input type="text" v-model="lastName"></div>
+        <div>全名：<input type="text" v-model="fullName"></div>
+        <div>{{fullName}}</div>
+
+        <div>姓：<input type="text" v-model="firstName"></div>
+        <div>名：<input type="text" v-model="lastName"></div>
+        <div>全名：<input type="text" v-model="fullName"></div>
+        <div>{{fullName}}</div>
+    </div>
+</body>
+<script>
+    // new Vue({
+    //     el: "#app",
+    //     data: {
+    //         firstName: "宋",
+    //         lastName: "奇",
+    //         fullName: '宋-奇'
+    //     },
+    //     methods: {
+
+    //     },
+    //     watch: {
+    //         firstName: {
+    //             handler(a, b) {
+    //                 console.log(a);
+    //                 this.fullName = a + '-' + this.lastName
+    //             }
+    //         },
+    //         lastName: {
+    //             handler(a, b) {
+    //                 console.log(a);
+    //                 this.fullName = this.firstName + '-' + a
+    //             }
+    //         },
+    //         fullName: {
+    //             handler(a, b) {
+    //                 console.log(a);
+    //                 let arr = a.split('-')
+    //                 this.firstName = a[0]
+    //                 this.lastName = a[1]
+    //             }
+    //         }
+    //     }
+    // })
+
+    // new Vue({
+    //     el: "#app",
+    //     data: {
+    //         firstName: "宋",
+    //         lastName: "奇",
+    //         fullName: '宋-奇'
+    //     },
+    //     methods: {},
+    //     watch: {
+    //         firstName: {
+    //             handler(a, b) {
+    //                 console.log(a);
+    //                 this.fullName = a + '-' + this.lastName
+    //             }
+    //         },
+    //         lastName: {
+    //             handler(a, b) {
+    //                 console.log(a);
+    //                 this.fullName = this.firstName + '-' + a
+    //             }
+    //         },
+    //         fullName: {
+    //             handler(a, b) {
+    //                 console.log(a);
+    //                 let arr = a.split('-')
+    //                 this.firstName = a[0]
+    //                 this.lastName = a[1]
+    //             }
+    //         }
+    //     }
+    // })
+
+    new Vue({
+        el: "#app",
+        data: {
+            firstName: "宋",
+            lastName: "奇",
+            fullName: '宋-奇'
+        },
+        methods: {},
+        watch: {
+            firstName: {
+                handler(a, b) {
+                    console.log(a);
+                    this.fullName = a + '-' + this.lastName
+                }
+            },
+            lastName: {
+                handler(a, b) {
+                    console.log(a);
+                    this.fullName = this.firstName + '-' + a
+                }
+            },
+            fullName: {
+                handler(a, b) {
+                    console.log(a);
+                    let arr = a.split('-')
+                    this.firstName = a[0]
+                    this.lastName = a[1]
+                }
+            }
+        }
+    })
+</script>
+
+</html>

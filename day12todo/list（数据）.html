@@ -310,11 +310,16 @@
 	var taskInput = document.querySelector(".active>input");
 	//获取ul的节点
 	var taskList = document.querySelector(".taskList");
-	var first = document.querySelector(".first");//数量
-	var all = document.querySelector(".activemin span:nth-of-type(2)"); //所有任务
-	var task = document.querySelector(".activemin span:nth-of-type(3)"); //已完成
-	var untask = document.querySelector(".activemin span:nth-of-type(4)"); //未完成
-	var clear = document.querySelector(".activemin span:nth-of-type(5)"); //未完成
+	//数量
+	var first = document.querySelector(".first");
+	//所有任务
+	var all = document.querySelector(".activemin span:nth-of-type(2)"); 
+	//已完成
+	var task = document.querySelector(".activemin span:nth-of-type(3)"); 
+	 //未完成
+	var untask = document.querySelector(".activemin span:nth-of-type(4)");
+	 //未完成
+	var clear = document.querySelector(".activemin span:nth-of-type(5)");
 	//用来计算输入的任务
 	var nextId;
 	// 底部显示隐藏
