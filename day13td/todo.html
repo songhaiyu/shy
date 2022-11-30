@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./todo.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="img">
+                <img src="./原生todo/note.75134fb0.svg" alt="">
+            </div>
+            <div class="title">
+                To-Do List
+            </div>
+        </header>
+        <div class="filed">
+            <h1>~ Today I need to ~</h1>
+            <div class="form">
+                <div class="form-input">
+                    <input type="text" placeholder="Add new todo..." class="ipt">
+                </div>
+                <button type="submit" class="submit"><span>Submit</span></button>
+            </div>
+        </div>
+        <ul class="todos">
+            <!-- <li class="todos-item">
+                <input type="checkbox" class="check-btn">
+                <p class="content">1</p>
+                <button class="close-btn">x</button>
+            </li>
+            <li class="todos-item completed">
+                <input type="checkbox" class="check-btn">
+                <p class="content">2</p>
+                <button class="close-btn">x</button>
+            </li> -->
+        </ul>
+        <ul class="todos1"></ul>
+        <ul class="todos2"></ul>
+        <div class="activemin">
+            <span><span class="first"></span>item left</span>
+            <span style="background-color: #fe7345; color:#fff;">All</span>
+            <span style="display: none;">Acitve</span>
+            <span style="display: none;">Completed</span>
+            <span style="display: none;">Clear completed</span>
+        </div>
+        <div class="footer">
+            <span class="footer-img">
+                <img src="./原生todo/1669454402133.jpg" alt="">
+            </span>
+            <span class="msg">Congrat, you have no more tasks to do</span>
+        </div>
+    </div>
+</body>
+<script>
+    var taskInput = document.querySelector('.ipt') //输入框
+    var activemin = document.querySelector('.activemin') //底部按钮
+    var footer = document.querySelector('.footer') //显示提示
+    var todos = document.querySelector('.todos') //ul
+    var todos1 = document.querySelector('.todos1') //ul
+    var todos2 = document.querySelector('.todos2') //ul
+    var submit = document.querySelector('.submit') //按钮添加
+    var all = document.querySelector(".activemin span:nth-of-type(2)"); //所有任务
+    var task = document.querySelector(".activemin span:nth-of-type(3)"); //已完成
+    var untask = document.querySelector(".activemin span:nth-of-type(4)"); //未完成
+    var clear = document.querySelector(".activemin span:nth-of-type(5)"); //未完成
+    var first = document.querySelector(".first")
+    // 回车键添加
+    taskInput.onkeydown = function (e) {
+        if (e.keyCode === 13) {
+            add()
+        }
+    }
+    // 添加封装
+    function add() {
+        if (taskInput.value == '' || taskInput.value == " ") {
+            return
+        } else {
+            var li = document.createElement('li');
+            li.innerHTML = ` <input type="checkbox" class="check-btn">
+                <p class="content">${taskInput.value}</p>
+                <button class="close-btn">x</button>`
+            li.className = 'todos-item'
+            todos.appendChild(li)
+            taskInput.value = ''
+            activemin.style.display = "block";
+            activemin.style.display = "flex";
+            footer.style.display = "none";
+            first.innerHTML = todos.children.length
+        }
+
+    }
+    // 添加按钮动画
+    submit.onclick = function () {
+        submit.style.transform = 'rotate(0deg)' //归零
+        setTimeout(function () { //定时器完成动画
+            submit.style.transition = 'transform .25s cubic-bezier(.175,.885,.32,1.275)'
+        }, 1000)
+        setTimeout(function () { //变回原来的样子
+            submit.style.transform = 'rotate(7deg)'
+        }, 100)
+        add() //调用封装函数
+    }
+    // 状态切换
+    todos.onclick = function (e) {
+        if (e.target.parentNode.className == 'todos-item') {
+            e.target.parentNode.className = 'completed'
+            task.style.display = 'block'
+            untask.style.display = 'block'
+            clear.style.display = 'block'
+            var lis = document.querySelectorAll('li')
+            var num = document.querySelectorAll('.completed').length
+            if (num == lis.length) {
+                task.style.display = 'none'
+                untask.style.display = 'none'
+                clear.style.display = 'block'
+            }
+        } else {
+            e.target.parentNode.className = 'todos-item'
+            var lis = document.querySelectorAll('li')
+            for (var i = 0; i < lis.length; i++) {
+                if (lis[i].className == 'completed') {
+                    task.style.display = 'block'
+                    untask.style.display = 'block'
+                    clear.style.display = 'block'
+
+                    return
+                } else {
+                    task.style.display = 'none'
+                    untask.style.display = 'none'
+                    clear.style.display = 'none'
+                }
+            }
+        }
+        // 删除
+        if (e.target.className == 'close-btn') {
+            e.target.parentNode.remove()
+            first.innerHTML = todos.children.length
+        }
+    }
+    // 批量删除
+    clear.onclick = function () {
+        var li = document.querySelectorAll('li')
+        console.log(li[0].className);
+        for (var i = 0; i < li.length; i++) {
+            if (li[i].className == 'completed') {
+                console.log(li[i].className);
+                li[i].remove()
+            }
+        }
+        task.style.display = "none";
+        untask.style.display = "none";
+        clear.style.display = "none";
+    }
+
+    task.onclick = function () {
+        var ons = document.querySelectorAll('.on1')
+        console.log(ons);
+        if (ons.length == 0) {
+           console.log('未选中');
+        } else {
+            for (let i = 0; i < ons.length; i++) {
+                ons[i].className = 'todos-item'
+            }
+        }
+
+        var show = document.querySelectorAll(".completed")
+        for (let i = 0; i < show.length; i++) {
+            show[i].className = "no";
+            all.style.backgroundColor = ''
+            all.style.color = '#000'
+            untask.style.backgroundColor = ''
+            untask.style.color = '#000'
+            clear.style.backgroundColor = ''
+            clear.style.color = '#000'
+            task.style.color = "#fff"
+            task.style.backgroundColor = '#fe7345'
+        }
+        var flag = document.querySelectorAll(".todos-item")
+        for (let i = 0; i < flag.length; i++) {
+            flag[i].style.display = "block";
+            flag[i].className = 'todos-item'
+        }
+
+
+    }
+    untask.onclick = function () {
+        var ons = document.querySelectorAll('.on')
+        if (ons.length == 0) {
+           
+                console.log(1);
+        } else {
+            console.log(ons);
+            for (let i = 0; i < ons.length; i++) {
+                ons[i].className = 'completed'
+            }
+        }
+
+        var show = document.querySelectorAll(".todos-item")
+        console.log(show);
+        for (let i = 0; i < show.length; i++) {
+            show[i].className = "no1";
+            all.style.backgroundColor = ''
+            all.style.color = '#000'
+            untask.style.backgroundColor = '#fe7345'
+            untask.style.color = '#fff'
+            clear.style.backgroundColor = ''
+            clear.style.color = '#000'
+            task.style.color = "#000"
+            task.style.backgroundColor = ''
+        }
+        var flag = document.querySelectorAll(".completed")
+        for (let i = 0; i < flag.length; i++) {
+            flag[i].style.display = "block";
+            flag[i].className = 'completed'
+        }
+    }
+    all.onclick = function () {
+        var lis = document.querySelectorAll('li')
+        console.log(lis);
+        all.style.backgroundColor = '#fe7345'
+        all.style.color = '#fff'
+        untask.style.backgroundColor = ''
+        untask.style.color = ''
+        clear.style.backgroundColor = ''
+        clear.style.color = '#000'
+        task.style.color = "#000"
+        task.style.backgroundColor = ''
+        for (let i = 0; i < lis.length; i++) {
+            if (lis[i].className == 'no') {
+                lis[i].className = 'completed'
+            }
+            if (lis[i].className == 'no1') {
+                lis[i].className = 'todos-item'
+            }
+            lis[i].style.display = "block";
+
+        }
+        add()
+    }
+</script>
+
+</html>

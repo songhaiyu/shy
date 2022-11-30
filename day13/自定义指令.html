@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-big="n"></div>
+
+
+        <!-- <input v-fbind="n" type="text"> -->
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    const vm = new Vue({
+        data() {
+            return {
+                n: 1
+            }
+        },
+        computed: {
+
+        },
+        directives: {
+            big(el, bind) {
+                console.log(el);
+                el.style.color='red'
+                console.log(bind);
+                el.innerHTML = bind.value * 10
+            },
+            // fbind: {
+            //     bind(el, val) {
+            //         console.log(el, 'bind el');
+            //         console.log(val, 'bind val');
+            //     },
+            //     insered(el, bind) {
+            //         console.log(el, 'insered el');
+            //         console.log(bind, 'insered bind');
+            //     },
+            //     update(el, bind) {
+            //         console.log(el, 'update el');
+            //         console.log(bind, 'update bind');
+            //     }
+            // }
+        }
+
+    })
+    vm.$mount('#app')
+
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <script src="./dayjs.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{time | fliterTime}}
+    </div>
+</body>
+<script>
+    /**
+     *  过滤器
+     *      1：局部过滤器
+     *      2：全局过滤器
+     * ***/
+    Vue.config.productionTip = false;
+    Vue.filter('fliterTime', function (val, str = 'YYYY年MM月DD日 hh:mm:ss') {
+        return dayjs(val).format(str)
+    })
+    const vm = new Vue({
+        data() {
+            return {
+                time: new Date().valueOf()
+            }
+        },
+        // filters: {
+        //     fliterTime(val) {
+        //         // var dd = new Date(val)
+        //         // var y = dd.getFullYear();
+        //         // var m = dd.getMonth() + 1;
+        //         // var d = dd.getDate();
+        //         // var h = dd.getHours();
+        //         // var mm = dd.getMinutes();
+        //         // var s = dd.getSeconds();
+        //         // return y + '年' + m + '月' + d + '日' + h + '时' + mm + '分' + s + '秒'
+        //         return dayjs(val, str = 'YYYY年MM月DD日 hh:mm:ss').format(str)
+        //     }
+        // }
+    })
+    vm.$mount('#app')
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model="searchName" placeholder="查找" />
+        <ul>
+            <li v-for="item in filterPersons" :key="item.id">
+                {{item.name}}--{{item.age}}--{{item.sex}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    const vm = new Vue({
+        data() {
+            return {
+                searchName: '',
+                persons: [
+                    { id: '001', name: "张三", age: 18, sex: "男" },
+                    { id: '002', name: "李四", age: 19, sex: "男" },
+                    { id: '003', name: "王五", age: 20, sex: "男" }
+                ],
+                car: {
+                    name: '奥迪A8',
+                    proce: '70万',
+                    color: '黑色'
+                },
+            }
+
+        },
+        computed: {
+            filterPersons() {
+                return this.persons.filter((ele) =>
+                    ele.name.indexOf(this.searchName) != -1
+                )
+            }
+        }
+
+    })
+    vm.$mount('#app')
+
+</script>
+
+</html>

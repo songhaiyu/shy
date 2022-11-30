@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-text="text"></div>
+        <div v-text="textdiv"></div>
+        <div v-html="html"></div>
+        <div v-html="htmldiv"></div>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    const vm = new Vue({
+        data() {
+            return {
+                text: '你好！小宋',
+                textdiv: '<div style="color:red">你好Vue</div>',
+                html: 'hello 小宋',
+                htmldiv: '<div style="color:pink">你好word</div>'
+            }
+        },
+        computed: {
+        },
+    })
+    vm.$mount('#app')
+
+</script>
+
+</html>

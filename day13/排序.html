@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>人员列表</h1>
+        <button @click="sheng(0)">年龄升序</button>
+        <button @click="sheng(1)">年龄降序</button>
+        <button @click="sheng(2)">原顺序</button>
+        <ul>
+            <li v-for="item in filterPersons" :key="item.id">
+                {{item.name}}--{{item.age}}--{{item.sex}}
+            </li>
+        </ul>
+
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    const vm = new Vue({
+        data() {
+            return {
+                searchName: '',
+                persons: [
+                    { id: '001', name: "张三", age: 58, sex: "男" },
+                    { id: '002', name: "李四", age: 19, sex: "男" },
+                    { id: '003', name: "王五", age: 20, sex: "男" },
+                    { id: '004', name: "老六", age: 24, sex: "男" }
+                ],
+                persons1: [
+                    { id: '001', name: "张三", age: 58, sex: "男" },
+                    { id: '002', name: "李四", age: 19, sex: "男" },
+                    { id: '003', name: "王五", age: 20, sex: "男" },
+                    { id: '004', name: "老六", age: 24, sex: "男" }
+                ],
+                car: {
+                    name: '奥迪A8',
+                    proce: '70万',
+                    color: '黑色'
+                },
+                filterPersons: []
+            }
+
+        },
+        methods: {
+            sheng(val) {
+                if (val == 0) {
+                    this.filterPersons = this.persons.sort((a, b) => {
+                        return a.age - b.age;
+                    })
+                }
+                if (val == 1) {
+                    this.filterPersons = this.persons.sort((a, b) => {
+                        return b.age - a.age;
+                    })
+                }
+                if (val == 2) {
+                    this.filterPersons = this.persons1
+                }
+
+            }
+        },
+        created() {
+            this.filterPersons = this.persons
+        },
+    })
+    vm.$mount('#app')
+
+</script>
+
+</html>
