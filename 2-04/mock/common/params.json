@@ -1,0 +1,499 @@
+{
+	"data": [
+		{
+			"cat_id": 1822,
+			"cat_name": "老男孩",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1858,
+					"cat_name": "小男孩",
+					"cat_pid": 1822,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1859,
+							"cat_name": "芜湖1",
+							"cat_pid": 1858,
+							"cat_level": 2,
+							"cat_deleted": false
+						},
+						{
+							"cat_id": 1909,
+							"cat_name": "1",
+							"cat_pid": 1858,
+							"cat_level": 2,
+							"cat_deleted": false
+						},
+						{
+							"cat_id": 1910,
+							"cat_name": "你爸爸",
+							"cat_pid": 1858,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				},
+				{
+					"cat_id": 1889,
+					"cat_name": "少爷学习呢",
+					"cat_pid": 1822,
+					"cat_level": 1,
+					"cat_deleted": false
+				},
+				{
+					"cat_id": 1917,
+					"cat_name": "哈哈",
+					"cat_pid": 1822,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1830,
+			"cat_name": "小臂崽子",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1845,
+					"cat_name": "cdsfdf",
+					"cat_pid": 1830,
+					"cat_level": 1,
+					"cat_deleted": false
+				},
+				{
+					"cat_id": 1852,
+					"cat_name": "二傻子",
+					"cat_pid": 1830,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1856,
+							"cat_name": "爬",
+							"cat_pid": 1852,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"cat_id": 1832,
+			"cat_name": "达大厦",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1838,
+					"cat_name": "达大厦啊",
+					"cat_pid": 1832,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1833,
+			"cat_name": "达大厦",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1834,
+			"cat_name": "达大厦",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1835,
+			"cat_name": "爱坤",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1836,
+					"cat_name": "只因为你太美",
+					"cat_pid": 1835,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1839,
+			"cat_name": "萨达撒",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1840,
+					"cat_name": "往大",
+					"cat_pid": 1839,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1841,
+							"cat_name": "达瓦大",
+							"cat_pid": 1840,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"cat_id": 1847,
+			"cat_name": "萨达撒",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1848,
+					"cat_name": "234567890",
+					"cat_pid": 1847,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1850,
+							"cat_name": "34567890",
+							"cat_pid": 1848,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"cat_id": 1849,
+			"cat_name": "addd",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1851,
+					"cat_name": "ddd",
+					"cat_pid": 1849,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1853,
+			"cat_name": "test",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1854,
+					"cat_name": "test1",
+					"cat_pid": 1853,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1855,
+							"cat_name": "test2",
+							"cat_pid": 1854,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				},
+				{
+					"cat_id": 1860,
+					"cat_name": "测试一级",
+					"cat_pid": 1853,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1861,
+			"cat_name": "删了没妈",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1862,
+					"cat_name": "删了没妈",
+					"cat_pid": 1861,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1863,
+							"cat_name": "删了没妈",
+							"cat_pid": 1862,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"cat_id": 1864,
+			"cat_name": "爷",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1865,
+					"cat_name": "父",
+					"cat_pid": 1864,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1866,
+							"cat_name": "子",
+							"cat_pid": 1865,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"cat_id": 1868,
+			"cat_name": "321",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1872,
+			"cat_name": "123123123asddasda",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1873,
+					"cat_name": "123123123123123",
+					"cat_pid": 1872,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1874,
+			"cat_name": "wsq",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1881,
+			"cat_name": "一级",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1882,
+					"cat_name": "二级",
+					"cat_pid": 1881,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1883,
+							"cat_name": "三级",
+							"cat_pid": 1882,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"cat_id": 1884,
+			"cat_name": "0阿萨德",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1885,
+			"cat_name": "我爱数据都怕死就",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1886,
+			"cat_name": "交通",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1887,
+					"cat_name": "超跑",
+					"cat_pid": 1886,
+					"cat_level": 1,
+					"cat_deleted": false,
+					"children": [
+						{
+							"cat_id": 1888,
+							"cat_name": "sf90",
+							"cat_pid": 1887,
+							"cat_level": 2,
+							"cat_deleted": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"cat_id": 1895,
+			"cat_name": "zl是是昂是的",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1896,
+			"cat_name": "zl是是傻逼",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1897,
+					"cat_name": "wsq是他爹",
+					"cat_pid": 1896,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1898,
+			"cat_name": "少爷奔驰可还行？",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1899,
+					"cat_name": "少爷你也太帮了把",
+					"cat_pid": 1898,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1905,
+			"cat_name": "123",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1906,
+			"cat_name": "123123213213",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1911,
+			"cat_name": "你爹",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1913,
+			"cat_name": "asdd",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1914,
+			"cat_name": "asd",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1919,
+			"cat_name": "哈哈",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false,
+			"children": [
+				{
+					"cat_id": 1924,
+					"cat_name": "哈哈哈",
+					"cat_pid": 1919,
+					"cat_level": 1,
+					"cat_deleted": false
+				}
+			]
+		},
+		{
+			"cat_id": 1921,
+			"cat_name": "test阿斯顿",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1923,
+			"cat_name": "weqweqweqwe",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1926,
+			"cat_name": "qweqwe",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		},
+		{
+			"cat_id": 1930,
+			"cat_name": "qwee",
+			"cat_pid": 0,
+			"cat_level": 0,
+			"cat_deleted": false
+		}
+	],
+	"meta": {
+		"msg": "获取成功",
+		"status": 200
+	}
+}

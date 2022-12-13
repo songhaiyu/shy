@@ -1,0 +1,93 @@
+{
+	"data": {
+		"total": 9,
+		"pagenum": 1,
+		"users": [
+			{
+				"id": 500,
+				"role_name": "超级管理员",
+				"username": "admin",
+				"create_time": 1486720211,
+				"mobile": "13321125330",
+				"email": "2240005172@qq.com",
+				"mg_state": true
+			},
+			{
+				"id": 939,
+				"role_name": "超级管理员",
+				"username": "1234",
+				"create_time": 1670424992,
+				"mobile": "234",
+				"email": "234",
+				"mg_state": false
+			},
+			{
+				"id": 940,
+				"role_name": "超级管理员",
+				"username": "222",
+				"create_time": 1670425608,
+				"mobile": "22",
+				"email": "22",
+				"mg_state": false
+			},
+			{
+				"id": 941,
+				"role_name": "超级管理员",
+				"username": "33",
+				"create_time": 1670426470,
+				"mobile": "11",
+				"email": "11",
+				"mg_state": false
+			},
+			{
+				"id": 942,
+				"role_name": "超级管理员",
+				"username": "34",
+				"create_time": 1670426488,
+				"mobile": "3456",
+				"email": "233",
+				"mg_state": false
+			},
+			{
+				"id": 943,
+				"role_name": "超级管理员",
+				"username": "1",
+				"create_time": 1670426513,
+				"mobile": "1",
+				"email": "1",
+				"mg_state": false
+			},
+			{
+				"id": 944,
+				"role_name": "超级管理员",
+				"username": "25",
+				"create_time": 1670426747,
+				"mobile": "1234",
+				"email": "124",
+				"mg_state": false
+			},
+			{
+				"id": 945,
+				"role_name": "超级管理员",
+				"username": "345",
+				"create_time": 1670426771,
+				"mobile": "2",
+				"email": "345",
+				"mg_state": false
+			},
+			{
+				"id": 946,
+				"role_name": "超级管理员",
+				"username": "2",
+				"create_time": 1670427383,
+				"mobile": "3234",
+				"email": "223",
+				"mg_state": false
+			}
+		]
+	},
+	"meta": {
+		"msg": "获取管理员列表成功",
+		"status": 200
+	}
+}
