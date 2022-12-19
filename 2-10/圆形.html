@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas id="c" width="300" height="300" style="border: 1px solid #ccc"></canvas>
+    <script>
+        const cnv = document.getElementById('c');
+        const cxt = cnv.getContext('2d');
+        //圆形
+        // cxt.beginPath();
+        // cxt.arc(150, 150, 80, 0,360 * Math.PI / 180)
+        // cxt.closePath();
+        // cxt.stroke();
+        // 半圆
+        // cxt.beginPath();
+        // cxt.arc(150, 150, 80, 0, 180 * Math.PI / 180)
+        // cxt.closePath();
+        // cxt.stroke();
+        // 半圆
+        // cxt.beginPath();
+        // cxt.arc(150, 150, 80, 0, 180 * Math.PI / 180 ,true)
+        // cxt.closePath();
+        // cxt.stroke();
+        // 半圆
+        // cxt.beginPath();
+        // cxt.arc(150, 150, 80, 90 * Math.PI / 180, 270 * Math.PI / 180, true)
+        // cxt.closePath();
+        // cxt.stroke();
+        // 残圆
+        cxt.beginPath();
+        cxt.arc(150, 150, 80, 0, 270 * Math.PI / 180)
+        // cxt.closePath();
+        cxt.lineTo(150, 150)
+        cxt.lineTo(230, 150)
+        cxt.stroke();
+
+    </script>
+
+</body>
+
+</html>

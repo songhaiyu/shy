@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <canvas id="box" width="400" height="300"></canvas>
+
+</body>
+<script>
+    const cnv = document.getElementById('box')
+    console.log(cnv);
+    const ctx = cnv.getContext("2d");
+    ctx.moveTo(40, 80)
+    ctx.lineTo(60, 140)
+    ctx.lineTo(80, 80)
+    ctx.lineTo(100, 140)
+    ctx.lineTo(120, 70)
+
+
+    ctx.stroke() 
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<body>
+    <canvas id="mycanvas" width="500" height="500"></canvas>
+</body>
+
+</html>
+<script>
+    // 获得canvas
+    var mycanvas = document.getElementById('mycanvas');
+    // 获取上下文
+    var ctx = mycanvas.getContext('2d');
+    // 绘制第一条直线
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.lineTo(200, 50);
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 10;
+    // 使用butt
+    ctx.lineCap = 'butt';
+    ctx.stroke();
+    // 绘制第二条直线
+    ctx.beginPath();
+    ctx.moveTo(50, 100);
+    ctx.lineTo(200, 100);
+    ctx.strokeStyle = 'green';
+    ctx.lineWidth = 10;
+    // 使用square
+    ctx.lineCap = 'square';
+    ctx.stroke();
+    // 绘制第三条直线
+    ctx.beginPath();
+    ctx.moveTo(50, 150);
+    ctx.lineTo(200, 150);
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 10;
+    // 使用round
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    /**
+     * 使用butt与square，直线两端的样式看似一样,均为方形。
+     * 但是，square比butt两端要长。因为square相当与将两个正方形拼接到线条的两端，
+     * 多处的部分就为正方形的长度。使用round，线条两端为半圆形，
+     * 长度不butt要长，相当于将两个半圆拼接在线条的两端。
+     * 所以，"round" 和 "square" 会使线条略微变长
+    */
+</script>

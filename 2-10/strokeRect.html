@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <canvas id="box" width="400" height="300"></canvas>
+
+</body>
+<script>
+    const cnv = document.getElementById('box')
+    console.log(cnv);
+    const ctx = cnv.getContext("2d");
+    // 样式
+    ctx.strokeStyle = "red"
+    // 50,50起点位置 ，200宽度，100高度
+    // strokeStyle必须写在strokeRect前面否则不生效
+    ctx.strokeRect(50, 50, 200, 100)
+    //填充
+    ctx.fillStyle = "blue"
+    // 样式fillStyle必须写在fillRect填充前面，否则样式不生效
+    ctx.fillRect(50, 50, 200, 100)
+
+    // strokeStyle,fillStyle, strokeRect,fillRect 同时使用
+    // 会产生描边和填充的效果
+
+</script>
+
+</html>
